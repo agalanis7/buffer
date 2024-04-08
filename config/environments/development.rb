@@ -59,7 +59,7 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
-  pf_domain = ENV['GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN']
+  pf_domain = ENV['https://congenial-space-guide-6v6pjwg9rr4hrjrg-3000.app.github.dev']
   config.action_dispatch.default_headers = {
     'X-Frame-Options' => "ALLOW-FROM #{pf_domain}"
   }
@@ -77,6 +77,8 @@ Rails.application.configure do
   pf_host = "#{ENV['CODESPACE_NAME']}-3000.#{pf_domain}"
   config.hosts << pf_host
   config.hosts << "localhost:3000"
+  config.hosts << "https://congenial-space-guide-6v6pjwg9rr4hrjrg-3000.app.github.dev"
+  config.hosts << "congenial-space-guide-6v6pjwg9rr4hrjrg-3000.app.github.dev"
 
   config.action_cable.allowed_request_origins = ["https://#{pf_host}", "http://localhost:3000"]
 end
