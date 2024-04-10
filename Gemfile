@@ -77,4 +77,9 @@ group :test do
   gem "webdrivers"
 end
 
+#database management
+#gem 'rails_db', '>= 2.3.1'
+
+
+
 

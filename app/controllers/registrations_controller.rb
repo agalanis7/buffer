@@ -11,7 +11,7 @@ class RegistrationsController < ApplicationController
             redirect_to "/"
            
         else
-            render :new
+            flash[:alert] = "Invalid email or password"
     end
 end
 
